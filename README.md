@@ -1,36 +1,30 @@
-# [Start Bootstrap](http://startbootstrap.com/) - [SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2/)
-[![CDNJS](https://img.shields.io/cdnjs/v/startbootstrap-sb-admin-2.svg)](https://cdnjs.com/libraries/startbootstrap-sb-admin-2)
+# MAP LEAFLET 
 
-[SB Admin 2](http://startbootstrap.com/template-overviews/sb-admin-2/) is an open source, admin dashboard template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+There are instructions for exporting data from Open Street Map in this Wiki link : http://wiki.openstreetmap.org/wiki/Downloading_data
 
-## Getting Started
+1) Create an Open Street Map Account.
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin-2/)
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git`
-* Fork the repo
+2) Choose the Export Option example url  : https://www.openstreetmap.org/export#map=15/42.3901/-72.5210 and export it
 
-## Using the Source Files
+3) Once exported into an osm format, you need to convert it to a geojson file as leaflet accepts only geojson files.
+https://help.openstreetmap.org/questions/18255/softwarelibraries-to-convert-osm-data-to-geojson-without-using-api
 
-After cloning the repo take a look at the `gulpfile.js` and check out the tasks available:
-* `gulp` The default task will compile the LESS and JS into the `dist` directory and minify the output, and it will copy all vendor libraries from `bower_components` into the `vendor` directory
-* `gulp dev` The dev task will serve up a local version of the template and will watch the LESS, JS, and HTML files for changes and reload the browser windo automatically
+```
+osmtogeojson in.osm > out.json
+```
 
-To update dependencies, run `bower update` and then run `gulp copy` to copy the updated dependencies into the `vendor` directory
+4) Once done follow the instructions given in the link http://leafletjs.com/examples/geojson/
 
-## Bugs and Issues
+To run the repo and see the example present in pages/map.html
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin-2/).
+```
+git clone https://github.com/danielsamfdo/map_leaflet_openstreetmap
+cd map_leaflet_openstreetmap
+python -m SimpleHTTPServer 8000
+```
 
-## Creator
+The simple http server is required for jQuery to load the json file
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
 
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
-
-## Copyright and License
-
-Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2/blob/gh-pages/LICENSE) license.
+This uses sb admin template from Start Bootstrap : https://startbootstrap.com/template-overviews/sb-admin-2/
